@@ -82,6 +82,10 @@ function imageClicked(event) {
             imageTwo.setAttribute("style", "display:none");
             imageThree.setAttribute("style", "display:none");
             processClick = false;
+            for (i = 0; i < imageArray.length; i++) {
+                console.log(imageArray[i].noSpaceName, "times shown: " + imageArray[i].countShow);
+                console.log(imageArray[i].noSpaceName, "times click: " + imageArray[i].countClicks);
+            }
         }
     }
 }
