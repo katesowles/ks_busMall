@@ -29,7 +29,7 @@
                 </div>
                 <div id="instruction" class="six columns">
                     <p>Welcome! This is a web app where you can browse images similar to what you might find in the SkyMall magazine&mdash;you know, the one that's tucked into the back-of-seat pocket on most airline flights. In this app, we'll take those products (specifically the office deocration section) and "vote" for your favorite product from each collection of three products shown while you endure your forever-long bus ride around Portland.</p>
-                    <a href="#vote" class="btn">Ready? Get Voting!</a>
+                    <a href="#vote" class="button">Ready? Get Voting!</a>
                 </div>
             </div>
         </div>
@@ -38,23 +38,27 @@
     <section id="vote" class="noImage">
         <div class="row">
             <div class="one-third column">
-                <figure>
-                    <img src="images/products/catchall-walnut.jpg" alt="Walnut Catchall" />
-                    <figcaption>Walnut Catchall</figcaption>
+                <figure id="one">
+                    <img src="" alt="" id="img1">
+                    <figcaption id="figcap1"></figcaption>
                 </figure>
             </div>
             <div class="one-third column">
-                <figure>
-                    <img src="images/products/keyboard-maple-closed.jpg" alt="Maple Keyboard Tray, closed" />
-                    <figcaption>Maple Keyboard, closed</figcaption>
+                <figure id="two">
+                    <img src="" alt="" id="img2">
+                    <figcaption id="figcap2"></figcaption>
                 </figure>
             </div>
             <div class="one-third column">
-                <figure>
-                    <img src="images/products/penholder-walnut.jpg" alt="Walnut Pen Holder" />
-                    <figcaption>Walnut Pen Holder</figcaption>
+                <figure id="three">
+                    <img src="" alt="" id="img3">
+                    <figcaption id="figcap3"></figcaption>
                 </figure>
             </div>
+        </div>
+        <div class="center">
+            <input type="button" name="submitButton" value="Submit" class="button black" id="submitButton">
+            <input type="button" name="voteMore" value="Vote More" class="button black" id="voteMore">
         </div>
     </section>
 
@@ -74,5 +78,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/app.js"></script>
 </body>
 </html>

@@ -18,12 +18,35 @@
     padding-top: 250px;
 }
 
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    color: white;
+    border: 1px solid white;
+    font-size: 1em;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
+    color: #ddd;
+    border-color: #ddd;
+
+}
+
+.black, button.black, input[type="submit"].black, input[type="reset"].black, input[type="button"].black {
+    color: #000;
+    border: 1px solid #000;
+    font-size: 1em;
+}
+
+
+.black:hover, button.black:hover, input[type="submit"].black:hover, input[type="reset"].black:hover, input[type="button"].black:hover {
+    color: #666;
+    border-color: #666;
+}
+
 /******************************************************************************/
 /******************************** CONTENT AREAS *******************************/
 /******************************************************************************/
 
 body {
-    background-color: #333;
 }
 
 header {
@@ -72,23 +95,6 @@ a:hover h1 {
 
 a:hover {
     color: #ddd;
-}
-
-.btn {
-    color: white;
-    border: 2px solid white;
-    padding: 8px 15px;
-    border-radius: 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.btn:hover {
-    color: #ddd;
-    border-color: #ddd;
-    transition: all .25s ease-in-out .25s;
 }
 
 figure img {
@@ -157,6 +163,10 @@ footer {
     position: relative;
 }
 
+section:first-of-type .overlay {
+    top: -100px;
+}
+
 .noImage {
     height: 825px;
 }
@@ -165,8 +175,19 @@ footer {
     padding-top: 100px;
 }
 
-section:first-of-type .overlay {
-    top: -100px;
+.center {
+    margin: 100px auto;
+    width: 293px;
+    box-sizing: border-box;
+}
+
+.center .button {
+    margin-right: 25px;
+    /*display: none;*/
+}
+
+.center .button:last-child {
+    margin: 0;
 }
 
 footer p {
