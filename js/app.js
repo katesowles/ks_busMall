@@ -2,13 +2,13 @@ var imageOne = document.getElementById("one");
 var imageTwo = document.getElementById("two");
 var imageThree = document.getElementById("three");
 var imageOneTag = document.getElementById("img1");
-var captionOneTag = document.getElementById("figcap1");
 var imageTwoTag = document.getElementById("img2");
-var captionTwoTag = document.getElementById("figcap2");
 var imageThreeTag = document.getElementById("img3");
+var captionOneTag = document.getElementById("figcap1");
+var captionTwoTag = document.getElementById("figcap2");
 var captionThreeTag = document.getElementById("figcap3");
 
-// var showButton = document.getElementById("submitButton");
+// var showButton = document.getElementById("seeResults");
 
 var imageArray = [];
 var totalClicks = 0;
@@ -19,6 +19,7 @@ imageTwo.addEventListener("click", imageClicked);
 imageThree.addEventListener("click", imageClicked);
 
 // showButton.addEventListener("click", showResults);
+
 // generates an object for each image
 function addImages(filename, filepath, noSpaceName) {
     this.filename = filename;
@@ -64,8 +65,36 @@ function randomImageIndex() {
 
 function imageClicked(event) {
     var targetId = event.target.getAttribute("id");
+    console.warn("targetId: " + targetId);
 
-    //TODO unfuck this shit...not counting the clickers properly. gets ID correctly but counts a "click" on any object as one for that object
+    imageOne.onclick = function() {
+      var idValue = imageOne.getAttribute("id");
+      for (var i = 0; i < imageArray.length; i++) {
+        if (idValue == imageArray[i].noSpaceName) {
+          imageArray[i].countClicks++;
+        }
+      }
+    }
+
+    imageTwo.onclick = function() {
+      var idValue = imageTwo.getAttribute("id");
+      for (var i = 0; i < imageArray.length; i++) {
+        if (idValue == imageArray[i].noSpaceName) {
+          imageArray[i].countClicks++;
+          console.log(imageArray[i].noSpaceName + " #$% " + imageArray[i].countClicks);
+        }
+      }
+    }
+
+    imageThree.onclick = function() {
+      var idValue = imageThree.getAttribute("id");
+      for (var i = 0; i < imageArray.length; i++) {
+        if (idValue == imageArray[i].noSpaceName) {
+          imageArray[i].countClicks++;
+          console.log(imageArray[i].noSpaceName + " #$% " + imageArray[i].countClicks);
+        }
+      }
+    }
 
     var targetImage;
     for ( imageIndex = 0; imageIndex < imageArray.length; imageIndex++) {
@@ -73,22 +102,27 @@ function imageClicked(event) {
             targetImage = imageArray[imageIndex];
         }
     }
+
     targetImage.countClicks++;
-    alert(targetId + targetImage.countClicks);
     totalClicks++;
-    console.log(targetId + targetImage.countClicks);
+    console.log(targetId, targetId.countClicks);
     if (processClick) {
         rotateImages();
-        if (totalClicks >= 15) {
-            submitButton.setAttribute("style", "visibility:visible");
+        if (totalClicks >= 16) {
+            youDidIt.setAttribute("style", "visibility:visible");
+            seeResults.setAttribute("style", "visibility:visible");
+            voteMore.setAttribute("style", "visibility:visible");
+            imageOne.setAttribute("style", "display:none");
+            imageTwo.setAttribute("style", "display:none");
+            imageThree.setAttribute("style", "display:none");
             processClick = false;
         }
     }
 }
 
-function showResults() {
-    console.log(totalClicks + " this is working, yes?");
-}
+// function showResults() {
+//     console.log(totalClicks + " this is working, yes?");
+// }
 
 function createImageStructure(whichImageTag, whichCaptionTag) {
     var random = randomImageIndex();
