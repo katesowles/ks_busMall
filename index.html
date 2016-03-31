@@ -21,51 +21,74 @@
         </div>
     </header>
 
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
     <section id="intro" class="bannerImage">
         <div class="overlay">
             <div class="row first">
                 <div class="three columns">
-                    x
+                    &nbsp;
                 </div>
                 <div id="instruction" class="six columns">
                     <p>Welcome! This is a web app where you can browse images similar to what you might find in the SkyMall magazine&mdash;you know, the one that's tucked into the back-of-seat pocket on most airline flights. In this app, we'll take those products (specifically the office deocration section) and "vote" for your favorite product from each collection of three products shown while you endure your forever-long bus ride around Portland.</p>
-                    <a href="#vote" class="btn">Ready? Get Voting!</a>
+                    <a href="#vote"><input type="button" name="goVote" value="Get Voting!" class="button" id="goVote"></a>
                 </div>
             </div>
         </div>
     </section>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
 
     <section id="vote" class="noImage">
         <div class="row">
             <div class="one-third column">
-                <figure>
-                    <img src="images/products/catchall-walnut.jpg" alt="Walnut Catchall" />
-                    <figcaption>Walnut Catchall</figcaption>
+                <figure id="one">
+                    <img src="" alt="" id="img1">
+                    <figcaption id="figcap1"></figcaption>
                 </figure>
             </div>
             <div class="one-third column">
-                <figure>
-                    <img src="images/products/keyboard-maple-closed.jpg" alt="Maple Keyboard Tray, closed" />
-                    <figcaption>Maple Keyboard, closed</figcaption>
+                <figure id="two">
+                    <img src="" alt="" id="img2">
+                    <figcaption id="figcap2"></figcaption>
                 </figure>
             </div>
             <div class="one-third column">
-                <figure>
-                    <img src="images/products/penholder-walnut.jpg" alt="Walnut Pen Holder" />
-                    <figcaption>Walnut Pen Holder</figcaption>
+                <figure id="three">
+                    <img src="" alt="" id="img3">
+                    <figcaption id="figcap3"></figcaption>
                 </figure>
+            </div>
+            <div class="center" id="youDidIt">
+                <p>You did it! You've voted for 16 products. If you'd like, you can either see the results for those 16 votes, or you can vote for 8 more products and then view your results when you're all done.</p>
+                <p>So, what'll it be?</p>
+                <a href="#results"><input type="button" name="seeResults" value="See Results" class="button black" id="seeResults"></a>
+                <input type="button" name="voteMore" value="Keep Voting" class="button black" id="voteMore">
             </div>
         </div>
     </section>
 
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
     <section id="results" class="bannerImage">
         <div class="overlay">
             <div class="row">
+                <div class="six columns">
+                    <canvas id="timeClicked" width="300" height="300"></canvas>
+                </div>
+                <div class="six columns">
+                    <canvas id="percentClicked" width="300" height="300"></canvas>
+                </div>
+            </div>
+            <div class="row">
                 <div class="one column">
+                    <a href="index.html"><input type="button" name="refresh" value="Replay" class="button" id="refresh"></a>
                 </div>
             </div>
         </div>
     </section>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
 
     <footer>
         <div class="row">
@@ -74,5 +97,9 @@
             </div>
         </div>
     </footer>
+    <script src="js/variables.js"></script>
+    <script src="js/arrays.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
 </body>
 </html>

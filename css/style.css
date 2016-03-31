@@ -1,5 +1,5 @@
 /******************************************************************************/
-/********************** OVERRIDING THE SKELETON DEFAULTS **********************/
+/******************************** CONTENT AREAS *******************************/
 /******************************************************************************/
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic|Source+Serif+Pro:400,600,700|Playfair+Display:400,400italic,700,700italic,900,900italic);
@@ -13,25 +13,83 @@
     margin: 0 auto;
 }
 
+body {
+    background-color: red;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(51,51,51,.5);
+}
+
+footer {
+    background-color: #efefef;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+}
+
 .first {
     margin-top: 100px;
     padding-top: 250px;
 }
 
-/******************************************************************************/
-/******************************** CONTENT AREAS *******************************/
-/******************************************************************************/
-
-body {
-    background-color: #333;
+.bannerImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 928px;
+    overflow: hidden;
+    position: relative;
 }
 
-header {
+.bannerImage:first-of-type {
+    height: 875px;
+}
+
+#intro {
+    background-image: url("../images/background/background-deskcollection.jpg");
+}
+
+#vote {
+    background-color: white;
+    display: none;
+}
+
+#results {
+    background-image: url("../images/background/background-personalcollection.jpg");
+    display: none;
+}
+
+.bannerImage div div p {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.overlay {
     width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    /*background-color: rgba(51,51,51,.8);*/
+    height: 928px;
+    background-color: rgba(51,51,51,0.7);
+    position: relative;
+}
+
+section:first-of-type .overlay {
+    top: -100px;
+}
+
+.noImage {
+    height: 828px;
+}
+
+.noImage .row {
+    padding-top: 125px;
 }
 
 /******************************************************************************/
@@ -74,23 +132,6 @@ a:hover {
     color: #ddd;
 }
 
-.btn {
-    color: white;
-    border: 2px solid white;
-    padding: 8px 15px;
-    border-radius: 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.btn:hover {
-    color: #ddd;
-    border-color: #ddd;
-    transition: all .25s ease-in-out .25s;
-}
-
 figure img {
     width: 100%;
     height: 100%;
@@ -104,69 +145,70 @@ figcaption {
     border: none;
 }
 
-footer {
-    background-color: #efefef;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 5px;
+.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    color: white;
+    border: 1px solid white;
+    font-size: 1em;
+    width: 200px;
 }
 
-/******************************************************************************/
-/********************************** SPECIFICS *********************************/
-/******************************************************************************/
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
+    color: #ddd;
+    border-color: #ddd;
 
-.bannerImage {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 928px;
-    overflow: hidden;
-    position: relative;
 }
 
-.bannerImage:first-of-type {
-    height: 875px;
+.black, button.black, input[type="submit"].black, input[type="reset"].black, input[type="button"].black {
+    color: #000;
+    border: 1px solid #000;
+    font-size: 1em;
 }
 
-#intro {
-    background-image: url("../images/background/background-deskcollection.jpg");
+
+.black:hover, button.black:hover, input[type="submit"].black:hover, input[type="reset"].black:hover, input[type="button"].black:hover {
+    color: #666;
+    border-color: #666;
 }
 
-#vote {
-    /*background-image: url("../images/background/background-personalcollection.jpg");*/
-    background-color: white;
+.center {
+    margin: 100px auto;
+    width: 428px;
+    box-sizing: border-box;
 }
 
-#results {
-    background-image: url("../images/background/background-homecollection.jpg");
+.center .button {
+    margin-right: 25px;
     display: none;
 }
 
-.bannerImage div div p {
-    color: white;
+.center .button:last-child {
+    margin: 0;
+}
+
+#youDidIt {
+    display: none;
+}
+
+#youDidIt p {
+    margin-bottom: 50px;
     font-size: 1.5em;
     font-weight: 300;
-    letter-spacing: 1px;
+    margin-bottom: 25px;
 }
 
-.overlay {
-    width: 100%;
-    height: 928px;
-    background-color: rgba(51,51,51,0.7);
-    position: relative;
+#seeResults, #voteMore {
+    display: none;
 }
 
-.noImage {
-    height: 825px;
+#seeResults {
+    margin-right: 25px;
 }
 
-.noImage .row {
-    padding-top: 100px;
-}
-
-section:first-of-type .overlay {
-    top: -100px;
+#results .six {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 footer p {
