@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: red;
+    /*background-color: red;*/
 }
 
 header {
@@ -224,4 +224,8 @@ footer p a {
 
 footer p a:hover {
     color: #333;
+}
+
+canvas {
+    background-color: rgba(204,204,204,0.5);
 }
