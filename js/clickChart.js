@@ -34,10 +34,10 @@ var barDataClick = {
 	labels : [], //these are our image titles or this.name
 	datasets : [
 		{
-			fillColor : "rgba(255,255,255,0.8)",
-			strokeColor : "rgba(255,255,255,0.8)",
-            scaleGridLineColor : "#fff",
-            scaleFontColor: "#fff",
+			fillColor : "#ffffff",
+			strokeColor : "#ffffff",
+            scaleGridLineColor : "#ffffff",
+            scaleFontColor: "#ffffff",
             barShowStroke : false,
 			data : [] // clicks
 		}
