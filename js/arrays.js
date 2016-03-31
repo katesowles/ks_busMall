@@ -7,6 +7,10 @@ function addImages(filename, filepath, noSpaceName) {
     this.noSpaceName = noSpaceName;
     this.countShow = 0;
     this.countClicks = 0;
+    this.clicksOverViews = function () {
+        var percentClick = this.countClicks / this.countShow;
+        return percentClick;
+    }
 }
 
 // imageArray, populated

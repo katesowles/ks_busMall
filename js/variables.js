@@ -8,10 +8,18 @@ var imageThreeTag = document.getElementById("img3");
 var captionOneTag = document.getElementById("figcap1");
 var captionTwoTag = document.getElementById("figcap2");
 var captionThreeTag = document.getElementById("figcap3");
+var voteButton = document.getElementById("goVote");
+var voteSection = document.getElementById("vote");
 var resultsButton = document.getElementById("seeResults");
+var resultSection = document.getElementById("results");
+
 var moreButton = document.getElementById("voteMore");
-// var chart = document.getElementById("");
+var voteSection2 = document.getElementById("moreVoting");
+
+// var clickChart = document.getElementById("timeClicked");
+// var percentChart = document.getElementById("percentClicked");
 
 // sets global variables
 var totalClicks = 0;
 var processClick = true;
+var roundTwo = false;

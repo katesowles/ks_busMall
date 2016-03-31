@@ -1,46 +1,30 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-// randomly selects an index number from the imageArray
+// STEP ONE : shows voting section when visitor clicks get voting button
+function showVoting() {
+    voteSection.setAttribute("style", "display:block");
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+// STEP TWO : determines a random imageArray ite when called
 function randomImageIndex() {
-  var result = Math.floor(Math.random() * (imageArray.length - 1));
-  return result;
+    var result = Math.floor(Math.random() * (imageArray.length - 1));
+    return result;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// checks to see which imageArray item matches the id for the image just clicked
-imageOne.onclick = function() {
-  var idValue = imageOne.getAttribute("id");
-  for (var i = 0; i < imageArray.length; i++) {
-    if (idValue == imageArray[i].noSpaceName) {
-      imageArray[i].countClicks++;
-    }
-  }
-}
-
-imageTwo.onclick = function() {
-  var idValue = imageTwo.getAttribute("id");
-  for (var i = 0; i < imageArray.length; i++) {
-    if (idValue == imageArray[i].noSpaceName) {
-      imageArray[i].countClicks++;
-      console.log(imageArray[i].noSpaceName + " #$% " + imageArray[i].countClicks);
-    }
-  }
-}
-
-imageThree.onclick = function() {
-  var idValue = imageThree.getAttribute("id");
-  for (var i = 0; i < imageArray.length; i++) {
-    if (idValue == imageArray[i].noSpaceName) {
-      imageArray[i].countClicks++;
-      console.log(imageArray[i].noSpaceName + " #$% " + imageArray[i].countClicks);
-    }
-  }
+// STEP THREE : plugs in values for the three image areas to the createImageStructure function
+function rotateImages() {
+    createImageStructure(imageOneTag, captionOneTag);
+    createImageStructure(imageTwoTag, captionTwoTag);
+    createImageStructure(imageThreeTag, captionThreeTag);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// this function creates the structure for hte new images when they're rotated
+// STEP FOUR : takes the inputs from rotateImages and populates the three images
 function createImageStructure(whichImageTag, whichCaptionTag) {
     var random = randomImageIndex();
     imageArray[random].countShow++;
@@ -52,20 +36,10 @@ function createImageStructure(whichImageTag, whichCaptionTag) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// this function rotates the images once the previous vote is cast
-function rotateImages() {
-    createImageStructure(imageOneTag, captionOneTag);
-    createImageStructure(imageTwoTag, captionTwoTag);
-    createImageStructure(imageThreeTag, captionThreeTag);
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
-// TODO i think this is where the trouble is coming from...
-
-function imageClicked(event) {
-    var targetId = event.target.getAttribute("id");
-    for ( imageIndex = 0; imageIndex < imageArray.length; imageIndex++) {
+// STEP FIVE : track the vote based on click, iterate through 16 cycles, at which point hide the voting and show youDidIt + buttons
+function imageClicked(whichImage) {
+    var targetId = whichImage.target.getAttribute("id");
+    for (imageIndex = 0; imageIndex < imageArray.length; imageIndex++) {
         if (imageArray[imageIndex].noSpaceName == targetId) {
             imageArray[imageIndex].countClicks++;
         }
@@ -73,33 +47,86 @@ function imageClicked(event) {
     totalClicks++;
     // console.log(targetId, imageArray[imageIndex].countClicks);
     if (processClick) {
-        rotateImages();
-        if (totalClicks >= 16) {
-            youDidIt.setAttribute("style", "visibility:visible");
-            seeResults.setAttribute("style", "visibility:visible");
-            voteMore.setAttribute("style", "visibility:visible");
+        var maxClicks = 5;
+        if (roundTwo) {
+            maxClicks = 3;
+        }
+        if (totalClicks == maxClicks && roundTwo == false) {
+            youDidIt.setAttribute("style", "display:block");
+            seeResults.setAttribute("style", "display:inline-block");
+            voteMore.setAttribute("style", "display:inline-block");
             imageOne.setAttribute("style", "display:none");
             imageTwo.setAttribute("style", "display:none");
             imageThree.setAttribute("style", "display:none");
             processClick = false;
-            for (i = 0; i < imageArray.length; i++) {
-                console.log(imageArray[i].noSpaceName, "times shown: " + imageArray[i].countShow);
-                console.log(imageArray[i].noSpaceName, "times click: " + imageArray[i].countClicks);
-            }
         }
+        if (totalClicks == maxClicks && roundTwo == true) {
+            showResults();
+        }
+    }
+    if (processClick) {
+        rotateImages();
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-//event listeners
-imageOne.addEventListener("click", imageClicked);
-imageTwo.addEventListener("click", imageClicked);
-imageThree.addEventListener("click", imageClicked);
-// resultsButton.addEventListener("click", );
-// moreButton.addEventListener("click", );
+// STEP SIX, OPTION ONE : user wants to get results for 16 votes and refresh button
+function showResults() {
+    voteSection.setAttribute("style", "display:none");
+    resultSection.setAttribute("style", "display:block;");
+    seeResults.setAttribute("style", "display:none");
+    voteMore.setAttribute("style", "display:none");
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// calling our functions
+// STEP SIX, OPTION TWO : user wants to vote 8 more times
+function voteAgain() {
+    seeResults.setAttribute("style", "display:none");
+    voteMore.setAttribute("style", "display:none");
+    youDidIt.setAttribute("style", "display:none");
+    imageOne.setAttribute("style", "display:inline-block");
+    imageTwo.setAttribute("style", "display:inline-block");
+    imageThree.setAttribute("style", "display:inline-block");
+    rotateImages();
+    processClick = true;
+    roundTwo = true;
+    totalClicks = 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+
+// EVENT LISTENERS
+voteButton.addEventListener("click", showVoting);       // when get voting button is pressed, unhide voting section
+imageOne.addEventListener("click", imageClicked);       // when image one spot is clicked, trigger imageClicked function
+imageTwo.addEventListener("click", imageClicked);       // when image two spot is clicked, trigger imageClicked function
+imageThree.addEventListener("click", imageClicked);     // when image three spot is clicked, trigger imageClicked function
+resultsButton.addEventListener("click", showResults);   // when show results button is pressed, unhide results section
+moreButton.addEventListener("click", voteAgain);        // when keep voting button is pressed, go back to voting
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+// calling our randomize function on page load so that objects are already loaded
 rotateImages();
