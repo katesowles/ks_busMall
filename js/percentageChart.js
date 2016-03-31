@@ -50,8 +50,8 @@ var barDataPercent = {
     {
         fillColor : "#ffffff",
         strokeColor : "#ffffff",
-        scaleGridLineColor : "#fff",
-        scaleFontColor: "#fff",
+        scaleGridLineColor : "#ffffff",
+        scaleFontColor: "#ffffff",
         barShowStroke : false,
         data : [] // clicks
     }
