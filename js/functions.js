@@ -47,9 +47,9 @@ function imageClicked(whichImage) {
     totalClicks++;
     // console.log(targetId, imageArray[imageIndex].countClicks);
     if (processClick) {
-        var maxClicks = 5;
+        var maxClicks = 16;
         if (roundTwo) {
-            maxClicks = 3;
+            maxClicks = 8;
         }
         if (totalClicks == maxClicks && roundTwo == false) {
             youDidIt.setAttribute("style", "display:block");
