@@ -12,12 +12,11 @@ var voteButton = document.getElementById("goVote");
 var voteSection = document.getElementById("vote");
 var resultsButton = document.getElementById("seeResults");
 var resultSection = document.getElementById("results");
-
 var moreButton = document.getElementById("voteMore");
 var voteSection2 = document.getElementById("moreVoting");
 
-// var clickChart = document.getElementById("timeClicked");
-// var percentChart = document.getElementById("percentClicked");
+// var clickChart = document.getElementById("clickChart");
+// var percentChart = document.getElementById("percentChart");
 
 // sets global variables
 var totalClicks = 0;
