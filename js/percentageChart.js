@@ -3,10 +3,6 @@ var labelArrayPercent = [];    //array to store labels for chart
 var yAxisArrayPercent = [];    //array to store Yaxis or clicks numbers for chart
 var percentArray = [];  //array to store yaxis or percent click per show rate
 
-// 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26
-
-// ((imageArray[i].countClicks / imageArray[i].countShow) * 100)
-
 //function for chart's labels
 var makeBarLabelsPercent = function() {
   for (var i = 0; i < imageArray.length; i++) {

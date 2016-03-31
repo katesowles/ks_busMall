@@ -14,11 +14,9 @@ var resultsButton = document.getElementById("seeResults");
 var resultSection = document.getElementById("results");
 var moreButton = document.getElementById("voteMore");
 var voteSection2 = document.getElementById("moreVoting");
-
 var chartClick = document.getElementById("clickChart");
 var chartPercent = document.getElementById("percentChart");
 
-// sets global variables
 var totalClicks = 0;
 var processClick = true;
 var roundTwo = false;
