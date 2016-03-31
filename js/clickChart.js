@@ -16,13 +16,13 @@ var makeYAxis = function() {
   }
 }
 
-// //adding separate
-// var makePercentChart = function() {
-//   for (var i = 0; i < imageArray.length; i++) {
-//     var x = Math.floor((imageArray[i].countClicks/imageArray[i].countShow)*100);
-//     percentArray.push(x);
-//   }
-// }
+//adding separate
+var makePercentChart = function() {
+  for (var i = 0; i < imageArray.length; i++) {
+    var x = Math.floor((imageArray[i].countClicks/imageArray[i].countShow)*100);
+    percentArray.push(x);
+  }
+}
 
 //function to show results
 //moved generageChart function from function section
@@ -41,7 +41,7 @@ function generateChart() {
 
   var canvas = document.getElementById("clickChart");
   var context = canvas.getContext("2d");
-  context = new Chart(context).Bar(barData, {responsive:true});
+  context = new Chart(context).Bar(barData, {maintainAspectRatio:false, responsive:true});
   //clicksChartGlobal = new Chart(clickChart).Bar(barData);
   //clickChart = clicksChartGlobal;
 
@@ -60,7 +60,7 @@ var barData = {
 	datasets : [
 		{
 			fillColor : "rgba(73,188,170,0.4)",
-			strokeColor : "rgba(72,174,209,0.4)",
+			strokeColor : "rgba(204,204,204,0.4)",
 			data : [] // clicks
 		}
 	]
