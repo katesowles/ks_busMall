@@ -77,8 +77,8 @@ function showResults() {
     resultSection.setAttribute("style", "display:block;");
     seeResults.setAttribute("style", "display:none");
     voteMore.setAttribute("style", "display:none");
-    // generateChartClick()
-    // generateChartPercent()
+    generateChartClick()
+    generateChartPercent()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -98,14 +98,6 @@ function voteAgain() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////////
 

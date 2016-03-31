@@ -25,9 +25,9 @@ function generateChartPercent() {
   barDataPercent.datasets[0].data = yAxisArrayPercent;
   chartPercent.setAttribute('style','visibility:visible');
 
-  var canvas = document.getElementById("chartPercent");
-  var contextPercent = canvas.getContext("2d");
-  contextPercent = new Chart(contextPercent).Bar(barDataPercent, {responsive:true});
+  var canvas = document.getElementById("percentChart");
+  var context = canvas.getContext("2d");
+  context = new Chart(context).Bar(barDataPercent, {responsive:true});
 
   canvas.setAttribute("style", "visibility:visible");
 }
@@ -36,9 +36,10 @@ var barDataPercent = {
   labels : [], //these are our image titles or this.name
   datasets : [
     {
-      fillColor : "rgba(73,188,170,0.4)",
-      strokeColor : "rgba(72,174,209,0.4)",
-      data : [] // clicks
+        fillColor : "rgba(255,255,255,0.8)",
+        strokeColor : "rgba(255,255,255,0.8)",
+        scaleGridLineColor : "rgba(255,255,255,.8)",
+        data : [] // clicks
     }
   ]
 }

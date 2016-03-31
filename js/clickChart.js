@@ -25,21 +25,21 @@ function generateChartClick() {
 
   var canvas = document.getElementById("clickChart");
   var context = canvas.getContext("2d");
-  context = new Chart(context).Bar(barDataClick, {responsive:true});
+  context = new Chart(context).Bar(barDataClick, {responsive:true, maintainAspectRatio:true});
 
   canvas.setAttribute("style", "visibility:visible");
-
 }
 
 var barDataClick = {
 	labels : [], //these are our image titles or this.name
 	datasets : [
 		{
-			fillColor : "rgba(255,255,255,.0.4)",
-			strokeColor : "rgba(204,204,204,0.4)",
-            scaleGridLineColor : "rgba(0,0,0,.5)",
+			fillColor : "rgba(255,255,255,0.8)",
+			strokeColor : "rgba(255,255,255,0.8)",
+            scaleGridLineColor : "rgba(255,255,255,.8)",
 
 			data : [] // clicks
 		}
 	]
+
 }

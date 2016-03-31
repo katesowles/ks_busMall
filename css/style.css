@@ -34,9 +34,13 @@ footer {
     padding: 5px;
 }
 
-.first {
+#intro .overlay .row {
     margin-top: 100px;
     padding-top: 250px;
+}
+
+#results .overlay .row {
+    padding-top: 150px;
 }
 
 .bannerImage {
@@ -226,6 +230,7 @@ footer p a:hover {
     color: #333;
 }
 
-canvas {
-    background-color: rgba(204,204,204,0.5);
-}
+/*canvas {
+    background-color: rgba(51,51,51,0.5);
+    overflow: hidden;
+}*/
