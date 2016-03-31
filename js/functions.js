@@ -47,9 +47,9 @@ function imageClicked(whichImage) {
     totalClicks++;
     // console.log(targetId, imageArray[imageIndex].countClicks);
     if (processClick) {
-        var maxClicks = 3;
+        var maxClicks = 16;
         if (roundTwo) {
-            maxClicks = 2;
+            maxClicks = 8;
         }
         if (totalClicks == maxClicks && roundTwo == false) {
             youDidIt.setAttribute("style", "display:block");
@@ -77,7 +77,8 @@ function showResults() {
     resultSection.setAttribute("style", "display:block;");
     seeResults.setAttribute("style", "display:none");
     voteMore.setAttribute("style", "display:none");
-    generateChart();
+    // generateChartClick()
+    // generateChartPercent()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
