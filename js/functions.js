@@ -123,7 +123,6 @@ function clearTotals() {
         imageArray[i].countShow = 0;
     }
     localStorage.setItem("imageArray", JSON.stringify(imageArray))
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////
