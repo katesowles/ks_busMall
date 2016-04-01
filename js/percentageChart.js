@@ -35,7 +35,7 @@ function generateChartPercent() {
 
   var canvas = document.getElementById("percentChart");
   var context = canvas.getContext("2d");
-  context = new Chart(context).Bar(barDataPercent, {responsive:false});
+  context = new Chart(context).Bar(barDataPercent, {responsive:false, maintainAspectRatio:false});
 
   canvas.setAttribute("style", "visibility:visible");
 }
