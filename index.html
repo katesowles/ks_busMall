@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BusMall</title>
+    <meta name="description" content="Similar to the SkyMall magazine, we're presenting our products in a web app format to be enjoyed on the forever-long commutes around Portland on public transit.">
+    <meta name="author" content="Kate Sowles">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <div class="row">
+            <div class="one column">
+                <a href="#intro"><h1><span>Bus</span>Mall</h1></a>
+            </div>
+        </div>
+    </header>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+    <section id="intro" class="bannerImage">
+        <div class="overlay">
+            <div class="row first">
+                <div class="three columns">
+                    &nbsp;
+                </div>
+                <div id="instruction" class="six columns">
+                    <p>Welcome! This is a web app where you can browse images similar to what you might find in the SkyMall magazine&mdash;you know, the one that's tucked into the back-of-seat pocket on most airline flights. In this app, we'll take those products (specifically the office decoration section) and "vote" for your favorite product from each collection of three products shown while you endure your forever-long bus ride around Portland.</p>
+                    <a href="#vote"><input type="button" name="goVote" value="Get Voting!" class="button" id="goVote"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+    <section id="vote" class="noImage">
+        <div class="row">
+            <div class="one-third column">
+                <figure id="one">
+                    <img src="" alt="" id="img1" class="thisIsImageOne">
+                    <figcaption id="figcap1"></figcaption>
+                </figure>
+            </div>
+            <div class="one-third column">
+                <figure id="two">
+                    <img src="" alt="" id="img2" class="thisIsImageTwo">
+                    <figcaption id="figcap2"></figcaption>
+                </figure>
+            </div>
+            <div class="one-third column">
+                <figure id="three">
+                    <img src="" alt="" id="img3" class="thisIsImageThree">
+                    <figcaption id="figcap3"></figcaption>
+                </figure>
+            </div>
+            <div class="center" id="youDidIt">
+                <p>You did it! You've voted for 16 products. If you'd like, you can either see the results for those 16 votes, or you can vote for 8 more products and then view your results when you're all done.</p>
+                <p>So, what'll it be?</p>
+                <a href="#results"><input type="button" name="seeResults" value="See Results" class="button black" id="seeResults"></a>
+                <input type="button" name="voteMore" value="Keep Voting" class="button black" id="voteMore">
+            </div>
+        </div>
+    </section>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+    <section id="results" class="bannerImage">
+        <div class="overlay">
+
+            <div class="row second">
+                <div class="one column">&nbsp;</div>
+                <div class="five columns">
+                    <canvas id="clickChart" width="300" height="300"></canvas>
+                </div>
+                <div class="five columns">
+                    <canvas id="percentChart" width="300" height="300"></canvas>
+                </div>
+                <div class="one column">&nbsp;</div>
+            </div>
+            <div class="row">
+                <div class="one column">
+                    <a href="index.html"><input type="button" name="refresh" value="Replay" class="button" id="resetButton"></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+    <footer>
+        <div class="row">
+            <div class="twelve columns">
+                <p>All products and images are created by <a href="http://grovemade.com">Grovemade</a>.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/chart.js"></script>
+    <script src="js/clickChart.js"></script>
+    <script src="js/percentageChart.js"></script>
+    <script src="js/variables.js"></script>
+    <script src="js/arrays.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+</body>
+</html>
