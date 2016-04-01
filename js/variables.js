@@ -18,10 +18,7 @@ var chartClick = document.getElementById("clickChart");
 var chartPercent = document.getElementById("percentChart");
 
 var totalClicks = 0;
-var processClick = true;
 var roundTwo = false;
 
 var clicksChartGlobal;
 var percentChartGlobal;
-
-var x = true;

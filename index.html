@@ -30,7 +30,7 @@
                     &nbsp;
                 </div>
                 <div id="instruction" class="six columns">
-                    <p>Welcome! This is a web app where you can browse images similar to what you might find in the SkyMall magazine&mdash;you know, the one that's tucked into the back-of-seat pocket on most airline flights. In this app, we'll take those products (specifically the office deocration section) and "vote" for your favorite product from each collection of three products shown while you endure your forever-long bus ride around Portland.</p>
+                    <p>Welcome! This is a web app where you can browse images similar to what you might find in the SkyMall magazine&mdash;you know, the one that's tucked into the back-of-seat pocket on most airline flights. In this app, we'll take those products (specifically the office decoration section) and "vote" for your favorite product from each collection of three products shown while you endure your forever-long bus ride around Portland.</p>
                     <a href="#vote"><input type="button" name="goVote" value="Get Voting!" class="button" id="goVote"></a>
                 </div>
             </div>
@@ -43,19 +43,19 @@
         <div class="row">
             <div class="one-third column">
                 <figure id="one">
-                    <img src="" alt="" id="img1">
+                    <img src="" alt="" id="img1" class="thisIsImageOne">
                     <figcaption id="figcap1"></figcaption>
                 </figure>
             </div>
             <div class="one-third column">
                 <figure id="two">
-                    <img src="" alt="" id="img2">
+                    <img src="" alt="" id="img2" class="thisIsImageTwo">
                     <figcaption id="figcap2"></figcaption>
                 </figure>
             </div>
             <div class="one-third column">
                 <figure id="three">
-                    <img src="" alt="" id="img3">
+                    <img src="" alt="" id="img3" class="thisIsImageThree">
                     <figcaption id="figcap3"></figcaption>
                 </figure>
             </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="row">
                 <div class="one column">
-                    <a href="index.html"><input type="button" name="refresh" value="Replay" class="button" id="refresh"></a>
+                    <a href="index.html"><input type="button" name="refresh" value="Replay" class="button" id="resetButton"></a>
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
     <footer>
         <div class="row">
             <div class="twelve columns">
-                <p>All products and images are created by <a href="grovemade.com">Grovemade</a>.</p>
+                <p>All products and images are created by <a href="http://grovemade.com">Grovemade</a>.</p>
             </div>
         </div>
     </footer>
@@ -107,6 +107,7 @@
     <script src="js/variables.js"></script>
     <script src="js/arrays.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/storage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
 </body>
 </html>
