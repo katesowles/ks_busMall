@@ -16,7 +16,7 @@
     <header>
         <div class="row">
             <div class="one column">
-                <a href="#intro"><h1><span>Bus</span>Mall</h1></a>
+                <a href="#intro" class=""><h1><span>Bus</span>Mall</h1></a>
             </div>
         </div>
     </header>
@@ -26,13 +26,12 @@
     <section id="intro" class="bannerImage">
         <div class="overlay">
             <div class="row first">
-                <div class="three columns">
-                    &nbsp;
-                </div>
+                <div class="three columns">&nbsp;</div>
                 <div id="instruction" class="six columns">
                     <p>Welcome! This is a web app where you can browse images similar to what you might find in the SkyMall magazine&mdash;you know, the one that's tucked into the back-of-seat pocket on most airline flights. In this app, we'll take those products (specifically the office decoration section) and "vote" for your favorite product from each collection of three products shown while you endure your forever-long bus ride around Portland.</p>
-                    <a href="#vote"><input type="button" name="goVote" value="Get Voting!" class="button" id="goVote"></a>
+                    <a href="#vote"><input type="button" name="goVote" value="Get Voting!" class="button rocking" id="goVote"></a>
                 </div>
+                <div class="three columns">&nbsp;</div>
             </div>
         </div>
     </section>
@@ -59,12 +58,15 @@
                     <figcaption id="figcap3"></figcaption>
                 </figure>
             </div>
-            <div class="center" id="youDidIt">
+
+            <div class="three columns">&nbsp;</div>
+            <div id="youDidIt" class="six columns">
                 <p>You did it! You've voted for 16 products. If you'd like, you can either see the results for those 16 votes, or you can vote for 8 more products and then view your results when you're all done.</p>
                 <p>So, what'll it be?</p>
-                <a href="#results"><input type="button" name="seeResults" value="See Results" class="button black" id="seeResults"></a>
-                <input type="button" name="voteMore" value="Keep Voting" class="button black" id="voteMore">
+                <a href="#results"><input type="button" name="seeResults" value="See Results" class="button" id="seeResults"></a>
+                <input type="button" name="voteMore" value="Keep Voting" class="button" id="voteMore">
             </div>
+            <div class="three columns">&nbsp;</div>
         </div>
     </section>
 
@@ -72,23 +74,33 @@
 
     <section id="results" class="bannerImage">
         <div class="overlay">
-
-            <div class="row second">
-                <div class="one column">&nbsp;</div>
-                <div class="five columns">
-                    <canvas id="clickChart" width="300" height="300"></canvas>
-                </div>
-                <div class="five columns">
-                    <canvas id="percentChart" width="300" height="300"></canvas>
-                </div>
-                <div class="one column">&nbsp;</div>
-            </div>
-            <div class="row">
-                <div class="one column">
-                    <a href="index.html"><input type="button" name="refresh" value="Replay" class="button" id="resetButton"></a>
+            <div class="loading">
+                <div class="container">
+                     <div class="circle circle1"></div>
+                     <div class="circle circle2"></div>
+                     <div class="circle circle3"></div>
                 </div>
             </div>
-
+            <div id="resultsGoHere">
+                <div class="row second">
+                    <div class="one column">&nbsp;</div>
+                    <div class="five columns">
+                        <h3>Total Clicks Per Item</h3>
+                        <canvas id="clickChart" width="300" height="400"></canvas>
+                    </div>
+                    <div class="five columns">
+                        <h3>Percent Click Per Item</h3>
+                        <canvas id="percentChart" width="300" height="400"></canvas>
+                    </div>
+                    <div class="one column">&nbsp;</div>
+                </div>
+                <div class="row">
+                    <div class="one column">
+                        <a href="index.html"><input type="button" name="keepVoting" value="Replay" class="button" id="keepVoting"></a>
+                        <a href="index.html"><input type="button" name="refresh" value="Replay" class="button" id="resetButton"></a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -97,7 +109,7 @@
     <footer>
         <div class="row">
             <div class="twelve columns">
-                <p>All products and images are created by <a href="http://grovemade.com">Grovemade</a>.</p>
+                <h6>All products and images are created by <a href="http://grovemade.com">Grovemade</a>.</h6>
             </div>
         </div>
     </footer>

@@ -1,11 +1,12 @@
 /******************************************************************************/
-/******************************** CONTENT AREAS *******************************/
+/****************************** SITE-WIDE ELEMENTS ****************************/
 /******************************************************************************/
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic|Source+Serif+Pro:400,600,700|Playfair+Display:400,400italic,700,700italic,900,900italic);
 
 * {
     font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333333;
 }
 
 .row {
@@ -13,127 +14,60 @@
     margin: 0 auto;
 }
 
-body {
-    /*background-color: red;*/
-}
-
 header {
     width: 100%;
     height: 100px;
     position: fixed;
     top: 0;
-    z-index: 100;
-    background-color: rgba(51,51,51,.5);
+    z-index: 1;
+    background-color: rgba(204,204,204,0.2);
 }
 
 footer {
     background-color: #efefef;
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;
+    bottom: 0;*/
     width: 100%;
     padding: 5px;
 }
 
-#intro .overlay .row {
-    margin-top: 100px;
-    padding-top: 250px;
-}
-
-#results .overlay .row {
-    padding-top: 150px;
-}
-
-.bannerImage {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 928px;
-    overflow: hidden;
-    position: relative;
-}
-
-.bannerImage:first-of-type {
-    height: 875px;
-}
-
-#intro {
-    background-image: url("../images/background/background-deskcollection.jpg");
-}
-
-#vote {
-    background-color: white;
-    display: none;
-}
-
-#results {
-    background-image: url("../images/background/background-personalcollection.jpg");
-    display: none;
-}
-
-.bannerImage div div p {
-    color: white;
-    font-size: 1.5em;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-.overlay {
-    width: 100%;
-    height: 928px;
-    background-color: rgba(51,51,51,0.7);
-    position: relative;
-}
-
-section:first-of-type .overlay {
-    top: -100px;
-}
-
-.noImage {
-    height: 828px;
-}
-
-.noImage .row {
-    padding-top: 125px;
-}
-
-/******************************************************************************/
-/***************************** UNIVERSAL ELEMENTS *****************************/
-/******************************************************************************/
-
-h1 {
-    /*text-align: center;*/
-    padding: 25px 0;
-    line-height: 1em;
-    color: white;
-    font-weight: 300;
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    padding: 25px 0;
     text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1em;
+    font-weight: 300;
+    color: #333333;
 }
 
-h1 span {
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, p span {
     font-weight: 600;
+}
+
+h3 {
+    text-align: center;
+}
+
+h6 {
+    font-weight: 200;
+    margin: 0;
+    padding: 10px 0;
+    text-transform: none;
 }
 
 p {
     text-align: justify;
 }
 
-p span {
-    font-weight: 600;
-}
-
-a {
-    color: white;
+a:link, a:visited {
+    color: #333333;
     text-decoration: none;
 }
 
-a:hover h1 {
-    color: #ddd;
+a:hover, a:active, a:hover h1, a:active h1 {
+    color: #000000;
     transition: all .25s ease-in-out .25s;
-}
-
-a:hover {
-    color: #ddd;
 }
 
 figure img {
@@ -146,32 +80,83 @@ figcaption {
     margin-top: 20px;
     text-align: center;
     font-weight: 300;
-    border: none;
 }
 
 .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-    color: white;
-    border: 1px solid white;
+    color: #333333;
+    border: 1px solid #333333;
     font-size: 1em;
     width: 200px;
 }
 
 .button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
-    color: #ddd;
-    border-color: #ddd;
-
+    color: #000000;
+    border-color: #000000;
 }
 
-.black, button.black, input[type="submit"].black, input[type="reset"].black, input[type="button"].black {
-    color: #000;
-    border: 1px solid #000;
-    font-size: 1em;
+canvas {
+    width: 600px;
+    height: 500px;
 }
 
+/******************************************************************************/
+/******************************* CUSTOMIZATION ********************************/
+/******************************************************************************/
 
-.black:hover, button.black:hover, input[type="submit"].black:hover, input[type="reset"].black:hover, input[type="button"].black:hover {
-    color: #666;
-    border-color: #666;
+.bannerImage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    position: relative;
+}
+
+#intro.bannerImage {
+    background-image: url("../images/background/background-deskcollection.jpg");
+    height: 868px;
+}
+
+#intro .row {
+    margin-top: 100px;
+    padding-top: 250px;
+}
+
+#vote.noImage {
+    background-color: white;
+    height: 643px;
+    display: none;
+    padding-top: 125px;
+}
+
+#results.bannerImage {
+    background-image: url("../images/background/background-personalcollection.jpg");
+    height: 868px;
+    display: none;
+}
+
+.bannerImage p {
+    color: #333333;
+    font-size: 1.5em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(204,204,204,0.8);
+    position: relative;
+    top: 0;
+}
+
+section:first-of-type .overlay {
+    top: -100px;
+}
+
+/*********************** CLEAN THIS UP ***********************/
+
+#results .row:first-child {
+    padding-top: 150px;
 }
 
 .center {
@@ -215,22 +200,118 @@ figcaption {
     align-content: center;
 }
 
-footer p {
-    color: black;
-    font-weight: 200;
-    margin: 0;
-    padding: 10px 0;
+/******************************************************************************/
+/********************************* ANIMATIONS *********************************/
+/******************************************************************************/
+
+.container {
+  position:absolute;
+  top:50%;
+  left:50%;
+  animation:fadeInUp 5s;
+}
+.circle{
+  position:absolute;
+  display:block;
+  border-radius:50%;
+  border: 2px solid #000000;
+  transform-origin:50% 50%;
+  transform-style:preserve-3d;
+}
+.circle1 {
+  animation : rotate1 1s 5 linear;
+  border-color : #333333;
+  height:100px;
+  width:100px;
+  margin:-50px;
+}
+.circle2 {
+  animation : rotate2 1s 5 linear;
+  border-color : #666666;
+  height:70px;
+  width:70px;
+  margin:-35px;
+}
+.circle3 {
+  animation:rotate3 1s 5 linear;
+  border-color : #999999;
+  height:10px;
+  width:10px;
+  margin:-5px;
+}
+@keyframes rotate1{
+  0% { transform: rotateZ(20deg) rotateY(0deg) }
+  100% { transform: rotateZ(100deg) rotateY(360deg) }
+}
+@keyframes rotate2{
+  0% { transform: rotateZ(100deg) rotateX(0deg) }
+  100% { transform: rotateZ(0deg) rotateX(360deg) }
+}
+@keyframes rotate3{
+  0% { transform: rotateZ(100deg) rotateX(-360deg) }
+  100% { transform: rotateZ(-360deg) rotateX(360deg) }
+}
+@keyframes fadeInUp{
+  0% { opacity : 1; margin-top : 20px; }
+  80% { opacity : 1; margin-top : 20px; }
+  100% { opacity : 0; margin-top : 20px; }
 }
 
-footer p a {
-    color: black;
+.loading {
+    font-weight: 900;
+    font-size: 50px;
+    opacity: 1;
+    animation: fade-out 5s ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fade-out {
+    0%      {
+        opacity: 1;
+        display:block;
+    }
+    80%     {
+        opacity: 1;
+        display:block;
+    }
+    100%    {
+        opacity: 0;
+        display:none;
+    }
 }
 
-footer p a:hover {
-    color: #333;
+#resultsGoHere {
+    opacity: 0;
+    animation: appear 2s linear;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+}
+@keyframes appear {
+    0%      {
+        opacity: 0;
+    }
+    100%    {
+        opacity: 1;
+    }
 }
 
-canvas {
-    width: 600px;
-    height: 400px;
+.rocking {
+    -webkit-animation-name: rocking;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite; -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+    -moz-animation-name: rocking;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-direction: alternate;
+    animation-name: rocking;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+@keyframes rocking {
+    0%      {transform: rotate(-5deg)}
+    100%    {transform: rotate(5deg)}
 }

@@ -118,12 +118,13 @@ function clearTotals() {
     imageOne.setAttribute("style", "display:none");
     imageTwo.setAttribute("style", "display:none");
     imageThree.setAttribute("style", "display:none");
-    for (i = 0; i < imageArray.length; i++) {
-        imageArray[i].countClicks = 0;
-        imageArray[i].countShow = 0;
-    }
-    localStorage.setItem("imageArray", JSON.stringify(imageArray))
-
+    // for (i = 0; i < imageArray.length; i++) {
+    //     imageArray[i].countClicks = 0;
+    //     imageArray[i].countShow = 0;
+    // }
+    // localStorage.setItem("imageArray", JSON.stringify(imageArray))
+    // var roundTwo = false;
+    // resetToDefaultValues();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
