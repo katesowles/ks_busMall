@@ -1,5 +1,5 @@
 function getLocalStorage(key, defaultValue) {
-    var value = localStorage[key];
+    var value = localStorage.setItem[key];
     if (value != null) {
         return value;
     }
@@ -17,22 +17,11 @@ function loadImageArray() {
     }
 }
 
-function elementById(id) {
-    return document.getElementById(id);
-}
-
-function elementByTag(tagname) {
-    return document.getElementsByTagName(tagname);
-}
-
-
 function resetToDefaultValues() {
-    totalClicks = getLocalStorage("totalClicks", 0);
-    roundTwo = getLocalStorage("roundTwo", false);
-    loadImageArray();
+    // localStorage.clear();
 }
 
-resetToDefaultValues();
+
 
 
 //
